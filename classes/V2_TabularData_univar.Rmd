@@ -172,7 +172,7 @@ The title can also *suggest* the decision:
 
 ```{r pieTitle_suggestion, eval=FALSE}
 # the pie plots the table:
-titleText3='WA needs to fully categorize school locations\n(info from 2018)'
+'WA needs to fully categorize school locations\n(info from 2018)'
 
 pie(ToPlot,
     main=titleText3,
@@ -519,9 +519,18 @@ plot1 = base + geom_bar(fill ="gray",
 plot1
 ```
 
-* We can now pay attention to the titles:
 
+* We can now pay attention to the titles:
+* HOMEWORK STARTS HERE*
 ```{r title_gg, eval=FALSE}
+base= ggplot(data = tableFreq, 
+             aes(reorder(x=locale,-pct),
+                 y = pct)) 
+             
+plot1 = base + geom_bar(fill ="gray",
+                        stat = 'identity') # y is just what it is!
+plot1
+
 plot2 = plot1 + labs(title=titleText2,
                      x =NULL, 
                      y = NULL,
@@ -734,8 +743,8 @@ frqTabO
 Now, we can use ggplot:
 
 ```{r ordTable_gg, eval=FALSE}
-
-base = ggplot(frqTabO,aes(x=grade,y=pct))
+library(ggplot2)
+base = ggplot(frqTabO,aes(x=grade, y=pct))
 base + geom_bar(stat = 'identity') 
 ```
 
